@@ -62,12 +62,12 @@ class NestedModal extends Component {
 }
 
 const ModalLogin = () => (
-  <Modal trigger={<Button>Login</Button>} dimmer='inverted'> 
+  <Modal trigger={<Button>Upgrade</Button>} dimmer='inverted'> 
     <Grid columns={3} 
           stackable size="large" 
           verticalAlign="top" 
           centered>
-      <Grid.Row  >
+      <Grid.Row>
         <Grid.Column width={5}>
           <Responsive as={Image} minWidth={768}>
             <Image src="/logoLeft.png" 
@@ -75,6 +75,7 @@ const ModalLogin = () => (
                    verticalAlign='top'/>
           </Responsive>
         </Grid.Column>
+
         <Grid.Column textAlign="center" 
                      verticalAlign="middle" 
                      width={6} >
@@ -89,7 +90,7 @@ const ModalLogin = () => (
                 you love.
               </p>
             </Modal.Description>
-            <LoginForm />
+      <LoginForm />
           </Modal.Content>
           <p style={{ padding: 10 }}>
             Already have an account? <NestedModal/>
@@ -100,6 +101,7 @@ const ModalLogin = () => (
             Service & Privacy Policy.
           </p>
         </Grid.Column>
+
         <Grid.Column floated="right" width={5}>
           <Responsive as={Image} 
                       minWidth={768}>
