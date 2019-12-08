@@ -13,7 +13,7 @@ const LoginForm = () => (
     <Form.Field>
         <input placeholder='Your Email' />
     </Form.Field>
-    <Button secondary type='Registration' >Sign Up</Button>
+    <Button secondary type='Registration'>Sign Up</Button>
   </Form>
 )
 
