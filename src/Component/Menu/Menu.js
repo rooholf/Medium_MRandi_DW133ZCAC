@@ -52,7 +52,7 @@ export default class MenuHeader extends Component {
             </Menu.Item>
           </Menu.Menu>
         </Menu>
-       
+       <Category/>
       </Grid>
     );
   }
