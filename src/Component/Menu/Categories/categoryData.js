@@ -1,57 +1,57 @@
 
-const categoryData =[
+const Data =[
     {
-        id: 1,
+        id: "1",
         name: "HOME"
     },
     {
-        id: 2,
+        id: "2",
         name: "ONEZERO"
     },
     {
-        id: 3,
+        id: "3",
         name: "ELEMENTAL"
     },
     {
-        id: 4,
+        id: "4",
         name: "GEN"
     },
     {
-        id: 5,
+        id: "5",
         name: "ZORA"
     },
     {
-        id: 6,
+        id: "6",
         name: "FORGE"
     },
     {
-        id: 7,
+        id: "7",
         name: "HUMAN PART"
     },
     {
-        id: 8,
+        id: "8",
         name: "MARKER"
     },
     {
-        id: 9,
+        id: "9",
         name: "LEVEL"
     },
     {
-        id: 10,
+        id: "10",
         name: "HEATED"
     },
     {
-        id: 11,
+        id: "11",
         name: "MODUS"
     },
     {
-        id: 12,
+        id: "12",
         name: "MODEL"
     },
     {
-        id: 13,
+        id: "13",
         name: "MOBA"
     }
 ]
 
-export default categoryData 
+export default Data 

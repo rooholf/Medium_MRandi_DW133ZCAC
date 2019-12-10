@@ -11,7 +11,6 @@ import {
 } from "semantic-ui-react";
 import LoginForm from "./LoginForm";
 import SignInForm from "./SignInForm";
-import { BrowserRouter as Router, Switch, Link, Route } from "react-router-dom";
 
 class NestedModal extends Component {
   state = { open: false };
@@ -27,7 +26,7 @@ class NestedModal extends Component {
         open={open}
         onOpen={this.open}
         onClose={this.close}
-        trigger={<a style={{ cursor: "pointer" }}>Sign in</a>}
+        trigger={<a href style={{ cursor: "pointer" }}>Sign in</a>}
       >
         <Grid columns={3} verticalAlign="top">
           <GridRow>
@@ -48,6 +47,7 @@ class NestedModal extends Component {
                 <SignInForm />
               </Modal.Content>
               <p style={{ padding: 30, size: 18 }}>
+                
                 <a style={{ cursor: "pointer" }}>
                   <Icon name="angle left"/> All sign in option
                 </a>
@@ -62,7 +62,7 @@ class NestedModal extends Component {
 }
 
 const ModalLogin = () => (
-  <Modal trigger={<Button>Upgrade</Button>} dimmer='inverted'> 
+  <Modal trigger={<Button>Sign Up</Button>} dimmer='inverted'> 
     <Grid columns={3} 
           stackable size="large" 
           verticalAlign="top" 

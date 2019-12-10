@@ -1,18 +1,25 @@
 import React from 'react';
-import ModalLogin from "./Login";
-import MenuHeader from "./Menu";
-import Category from "./Category";
+
+import MenuHeader from "./Menu/Menu";
+
 import { Container } from 'semantic-ui-react';
+import Content from './Body/Content';
+
 
 function App() {
+  
   return (
     <div className="App">
       <Container>
          <MenuHeader />
+  
       </Container>
+    
     </div>
    
   );
 }
 
 export default App;
+
+
