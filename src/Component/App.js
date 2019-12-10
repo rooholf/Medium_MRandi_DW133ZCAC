@@ -4,6 +4,7 @@ import MenuHeader from "./Menu/Menu";
 
 import { Container } from 'semantic-ui-react';
 import Content from './Body/Content';
+import Category from './Menu/Categories/Category';
 
 
 function App() {
@@ -11,8 +12,7 @@ function App() {
   return (
     <div className="App">
       <Container>
-         <MenuHeader />
-          <Content/>
+         <Category/>
       </Container>
     
     </div>
