@@ -14,29 +14,30 @@ export default class Category extends Component {
       <CategoryProps key={item.id} Data={item} />
     ));
     return (
-        <Container>
-          <Menu
-            secondary
-        
-            defaultActiveIndex="HOME"
-            fluid
-            style={{ overflowX: "scroll" }}
-            
-          > 
-            {categoryComponent.map((currElement, Index) => {
-              return (
-                <Menu.Item
-                  active={activeItem === { currElement }}
-                  onClick={this.handleItemClick}
-                  key={Index}
-                >
-                  {currElement}
-                </Menu.Item>
-              );
-            })}
-          </Menu>
-        </Container>
-      
+      <div style={{textAlign:'center'}}>
+        <Menu
+          color='grey'
+          secondary
+          compact
+          style={{
+            overflowX: "hidden",
+            paddingBottom: "0px"
+          }}
+        >
+          {categoryComponent.map((currElement, Index) => {
+            return (
+              <Menu.Item
+
+                active={activeItem === { currElement }}
+                onClick={this.handleItemClick}
+                key={Index}
+              >
+                {currElement}
+              </Menu.Item>
+            );
+          })}
+        </Menu>
+      </div>
     );
   }
 }
