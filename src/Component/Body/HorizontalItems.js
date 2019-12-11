@@ -1,7 +1,7 @@
 
 import { Icon, Grid, Item } from "semantic-ui-react";
 import {Link} from "react-router-dom";
-import Article from "./Article";
+import Article from "./Categories/Article";
 import React, { Component, PropTypes } from 'react'
 
 class HorizontalItems extends Component {

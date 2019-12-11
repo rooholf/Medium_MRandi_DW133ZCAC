@@ -5,20 +5,22 @@ import {
   Icon,
   Item,
   Container,
-  GridColumn,
+
   Divider,
   ItemExtra
 } from "semantic-ui-react";
 
-import Articles from "./HorizontalItems";
-import Article from "./Article";
+import Category from "./Categories/Category";
+
 
 export default class Content extends Component {
   render() {
     return (
+      
       <Container>
-        <Grid columns={3} style={{ paddingTop: "40px" }} divided="vertically">
-          <Grid.Row>
+        <Category />
+        <Grid stackable columns={3} style={{ paddingTop: "40px" }} divided="vertically">
+          <Grid.Row stretched>
             <Grid.Column width={6}>
               <Item.Group>
                 <Image

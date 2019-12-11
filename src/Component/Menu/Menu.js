@@ -8,6 +8,7 @@ import {
   Container
 } from "semantic-ui-react";
 import ModalLogin from "./SignIn/Login";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 export default class MenuHeader extends Component {
   state = {};
@@ -23,7 +24,7 @@ export default class MenuHeader extends Component {
     return (
       <Container>
         <Menu stackable secondary size="mini">
-          <Menu.Item>
+          <Menu.Item as={Link} to='./'>
             <Image src="/medium-logo.svg" />
           </Menu.Item>
           <Menu.Menu position="right">

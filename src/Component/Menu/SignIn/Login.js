@@ -48,8 +48,8 @@ class NestedModal extends Component {
               </Modal.Content>
               <p style={{ padding: 30, size: 18 }}>
                 
-                <a style={{ cursor: "pointer" }}>
-                  <Icon name="angle left"/> All sign in option
+                <a style={{ cursor: "pointer" }} onClick={this.close}>
+                  <Icon name="angle left" /> All sign in option
                 </a>
               </p>
             </Grid.Column>
