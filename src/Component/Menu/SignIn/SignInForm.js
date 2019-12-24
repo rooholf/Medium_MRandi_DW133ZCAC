@@ -15,7 +15,7 @@ export default class SignInForm extends Component {
   
 
   render() {
-    const { password, email, submittedPassword, submittedEmail } = this.state;
+    const { password, email} = this.state;
     return (
       <div>
         <Form size="huge" onSubmit={this.handleSubmit}>
@@ -32,12 +32,9 @@ export default class SignInForm extends Component {
               onChange={this.handleChange}
               type="password"
             />
-          <Form.Button content="Submit"/>
+          <Form.Button content="Submit" />
         </Form>
-        <strong>onChange:</strong>
-        <pre>{JSON.stringify({ password, email }, null, 2)}</pre>
-        <strong>onSubmit:</strong>
-        <pre>{JSON.stringify({ submittedPassword, submittedEmail }, null, 2)}</pre>
+        
       </div>
     );
   }

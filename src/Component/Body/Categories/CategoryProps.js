@@ -1,15 +1,11 @@
 import React, { Component } from "react";
-import { Menu, Container } from "semantic-ui-react";
+import { Menu} from "semantic-ui-react";
 
 
 import { Link } from "react-router-dom";
 
 
 export default class CategoryProps extends Component {
-    constructor(props){
-        super(props)
-        
-    }
   state = { activeItem: "closest" };
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
@@ -24,7 +20,6 @@ export default class CategoryProps extends Component {
             onClick={this.handleItemClick}
           >
             {this.props.name}
-            
           </Menu.Item>
       </div>
     );

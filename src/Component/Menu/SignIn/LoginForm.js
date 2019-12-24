@@ -8,7 +8,7 @@ const LoginForm = () => (
       <input placeholder='Your Username' />
     </Form.Field>
     <Form.Field>
-      <input placeholder='Your Password' />
+      <input placeholder='Your Password'  type="password"/>
     </Form.Field>
     <Form.Field>
         <input placeholder='Your Email' />

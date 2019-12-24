@@ -22,18 +22,18 @@ class NestedModal extends Component {
     const { open } = this.state;
     return (
       <Modal
-        dimmer='inverted'
+        dimmer="inverted"
         open={open}
         onOpen={this.open}
         onClose={this.close}
-        trigger={<a href style={{ cursor: "pointer" }}>Sign in</a>}
+        trigger={<Button style={{ cursor: "pointer",background:'none',color:'green' }}>Sign in</Button>}
       >
-        <Grid columns={3} verticalAlign="top">
+        <Grid columns={3} stackable size="large" verticalAlign="top" centered>
           <GridRow>
-            <Grid.Column></Grid.Column>
-            <Grid.Column textAlign="center" 
-                         verticalAlign="top" 
-                         width={5}>
+            <Grid.Column width={5}>
+              <Responsive minWidth={768}></Responsive>
+            </Grid.Column>
+            <Grid.Column textAlign="center" verticalAlign="middle" width={6}>
               <Modal.Content>
                 <Modal.Description>
                   <Header style={{ paddingTop: 50 }} size="large">
@@ -47,13 +47,15 @@ class NestedModal extends Component {
                 <SignInForm />
               </Modal.Content>
               <p style={{ padding: 30, size: 18 }}>
-                
-                <a style={{ cursor: "pointer" }} onClick={this.close}>
+                <Button style={{ cursor: "pointer",background:'none',color:'blue' }} onClick={this.close}>
                   <Icon name="angle left" /> All sign in option
-                </a>
+                </Button>
               </p>
+            </Grid.Column >
+
+            <Grid.Column width={5}>
+              <Responsive as={Image} minWidth={768}></Responsive>
             </Grid.Column>
-            <Grid.Column></Grid.Column>
           </GridRow>
         </Grid>
       </Modal>
@@ -62,38 +64,34 @@ class NestedModal extends Component {
 }
 
 const ModalLogin = () => (
-  <Modal trigger={<Button>Sign Up</Button>} dimmer='inverted'> 
-    <Grid columns={3} 
-          stackable size="large" 
-          verticalAlign="top" 
-          centered>
+  <Modal trigger={<Button>Sign Up</Button>} dimmer="inverted">
+    <Grid columns={3} stackable size="large" verticalAlign="top" centered>
       <Grid.Row>
         <Grid.Column width={5}>
           <Responsive as={Image} minWidth={768}>
-            <Image src="/logoLeft.png" 
-                   fluid floated='left' 
-                   verticalAlign='top'/>
+            <Image
+              src="/logoLeft.png"
+              fluid
+              floated="left"
+              verticalAlign="top"
+            />
           </Responsive>
         </Grid.Column>
 
-        <Grid.Column textAlign="center" 
-                     verticalAlign="middle" 
-                     width={6} >
+        <Grid.Column textAlign="center" verticalAlign="middle" width={6}>
           <Modal.Content>
             <Modal.Description>
-              <Header style={{ textSize: "34px" }}>
-                      Join Medium
-              </Header>
+              <Header style={{ textSize: "34px" }}>Join Medium</Header>
               <p style={{ padding: 10 }}>
                 Create an account to receive great stories in your inbox,
                 personalize your homepage, and follow authors and topics that
                 you love.
               </p>
             </Modal.Description>
-      <LoginForm />
+            <LoginForm />
           </Modal.Content>
           <p style={{ padding: 10 }}>
-            Already have an account? <NestedModal/>
+            Already have an account? <NestedModal />
           </p>
           <p style={{ paddingTop: 10 }}>
             To make Medium work, we log user data and share it with service
@@ -103,11 +101,8 @@ const ModalLogin = () => (
         </Grid.Column>
 
         <Grid.Column floated="right" width={5}>
-          <Responsive as={Image} 
-                      minWidth={768}>
-            <Image src="/logoRight.png" 
-                   floated="right" 
-                   size="medium" />
+          <Responsive as={Image} minWidth={768}>
+            <Image src="/logoRight.png" floated="right" size="medium" />
           </Responsive>
         </Grid.Column>
       </Grid.Row>

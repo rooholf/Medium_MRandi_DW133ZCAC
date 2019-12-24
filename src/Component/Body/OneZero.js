@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import ArticleProps from "./ArticleProps";
 import {
   Grid,
@@ -13,21 +12,47 @@ import {
   Segment,
   Header,
   Item,
-  Icon,
-  MenuItem
+  Icon
 } from "semantic-ui-react";
+import Axios from "axios";
+
+
+
+
+
+
+
 
 export default class OneZero extends Component {
+  
+  
+  state = {
+    article: []
+  };
+
+  query = new URLSearchParams(window.location.search);
+  url = this.query.get("id");
+
+  componentDidMount() {
+    const id = this.url
+    Axios.get(`http://localhost:5000/api/v1/category/${id}/article`).then(res => {
+      const articles = res.data;
+      this.setState({ article: articles });
+ 
+    });
+  }
+
   render() {
+    const Data = this.state.article;
+
     return (
       <div style={{ paddingLeft: "5vw", paddingRight: "5vw" }}>
         <Divider />
-        <Container textAlign="center" fluid>
+        <Container textAlign="center">
           <Menu secondary style={{ paddingTop: "8vh" }} fluid stackable>
             <Grid columns="equal">
               <Grid.Column width={5} textAlign="left">
                 <Image
-                  fluid
                   size="medium"
                   src="https://miro.medium.com/max/540/1*cw32fIqCbRWzwJaoQw6BUg.png"
                 />
@@ -55,7 +80,7 @@ export default class OneZero extends Component {
             </Menu.Item>
           </Menu>
 
-          <Segment.Group basic horizontal style={{ marginTop: "10vh" }}>
+          <Segment.Group horizontal style={{ marginTop: "10vh" }}>
             <Grid>
               <Grid.Column>
                 <Image src="/Influencer-shootout.png" />
@@ -173,21 +198,23 @@ export default class OneZero extends Component {
                 <Divider />
               </Grid.Column>
               <Grid.Column></Grid.Column>
+           
             </Grid.Row>
 
-            {Article.map(item => (
+            {Data.map((item) => (
               <Grid.Row>
                 <Grid.Column width={10}>
-                <ArticleProps
-                  key={item.id}
-                  header={item.header}
-                  meta={item.meta}
-                  image={item.image}
-                  extra={item.extra}
-                />
-                  </Grid.Column>
+                  <ArticleProps
+                    key={item.id}
+                    header={item.title}
+                    meta={item.content}
+                    image={item.image}
+                    extra={item.createdAt}
+                  />
+                </Grid.Column>
               </Grid.Row>
             ))}
+
           </Grid>
         </Container>
       </div>
@@ -195,43 +222,3 @@ export default class OneZero extends Component {
   }
 }
 
-const Article = [
-  {
-    id: "1",
-    header: " Your Family’s Behavioral Patterns Are In Your DNA",
-    meta: "After a lifetime of looking good for other",
-    paragraph:
-      "If you’re concerned about message retention, solutions are just a few clicks away",
-    extra: 'Sep 30 . 7 min read ',
-    image:
-      "https://cdn-images-1.medium.com/fit/c/304/312/1*AX-ojZx301J9_BU4lan5WQ.gif"
-  },
-  {
-    id: "2",
-    header: " Your ",
-    meta: "After a lifetime of looking good for other",
-    paragraph:
-      "If you’re concerned about message retention, solutions are just a few clicks away",
-    extra: 'Sep 30 . 7 min read ',
-    image:
-      "https://cdn-images-1.medium.com/fit/c/304/312/1*AX-ojZx301J9_BU4lan5WQ.gif"
-  },
-  {
-    id: "3",
-    header: " Your  Patterns Are In Your DNA",
-    meta: "After a lifetime of looking good for other",
-    paragraph:
-      "If you’re concerned about message retention, solutions are just a few clicks away",
-    extra: 'Sep 30 . 7 min read ',
-    image:
-      "https://cdn-images-1.medium.com/fit/c/304/312/1*AX-ojZx301J9_BU4lan5WQ.gif"
-  },
-  {
-    id: 3,
-    header: "11 JavaScript Animation Libraries for 2019",
-    meta: " Some of the finest JS and CSS animaton Libraries around.",
-    extra: "jun 28 . 7 min read",
-    image:
-      "https://cdn-images-1.medium.com/fit/c/304/312/1*AX-ojZx301J9_BU4lan5WQ.gif"
-  }
-];
